@@ -1,4 +1,7 @@
 <?php
+date_default_timezone_set('Asia/Karachi');
+
+
 /**
  * CodeIgniter
  *
@@ -53,7 +56,16 @@
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+	//define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
+	
+	switch(dirname(__FILE__)) {
+		case '/Library/WebServer/Documents/cmsnew/public_html':
+			define('ENVIRONMENT', 'development');
+			break;
+		default:
+			define('ENVIRONMENT', 'production');
+			break;
+	}
 
 /*
  *---------------------------------------------------------------
@@ -97,7 +109,7 @@ switch (ENVIRONMENT)
  * This variable must contain the name of your "system" directory.
  * Set the path if it is not in the same directory as this file.
  */
-	$system_path = 'system';
+	$system_path = '../system';
 
 /*
  *---------------------------------------------------------------
@@ -114,7 +126,7 @@ switch (ENVIRONMENT)
  *
  * NO TRAILING SLASH!
  */
-	$application_folder = 'application';
+	$application_folder = '../application';
 
 /*
  *---------------------------------------------------------------
