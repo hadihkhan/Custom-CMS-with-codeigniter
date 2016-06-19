@@ -5,14 +5,11 @@
     	<div class="modal-dialog">
     		<!-- Modal content-->
       		<div class="modal-content">
-        		<div class="modal-header">
-          			<h4 class="modal-title">Modal Header</h4>
-        		</div>
         		<div class="modal-body">
-          			<p>Some text in the modal.</p>
+          			<?php $this->load->view($subview); ?>
         		</div>
         		<div class="modal-footer">
-          			&copy; <?php echo $meta_title; ?>
+          			&copy; <?php echo date('Y') . $meta_title; ?>
         		</div>
       		</div>
       
