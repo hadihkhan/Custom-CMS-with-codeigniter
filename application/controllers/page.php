@@ -5,20 +5,6 @@ class Page extends Frontend_Controller {
 		$this->load->model('page_m');
 	}
 
-	public function index () {
-		$pages = $this->page_m->get_by(array('slug' => 'about-us'));
-		var_dump($pages);
-	}
+	public function index () {}
 
-	public function save () {
-		$data = array(
-			'order' => '3'
-		);
-		$id = $this->page_m->save($data, 5);
-		var_dump($id);
-	}
-	public function delete () {
-		$this->page_m->delete(5);
-		
-	}
 }
